@@ -5,7 +5,7 @@
 # Contributor: Mateus Rodrigues Costa <charles [dot] costar [at] gmail [dot] com>
 
 pkgname=chrome-remote-desktop
-pkgver=115.0.5790.10
+pkgver=200.0.0.0
 pkgrel=1
 pkgdesc="Access other computers or allow another user to access your computer securely over the Internet"
 arch=("x86_64")
@@ -14,16 +14,10 @@ license=("BSD")
 depends=("gtk3" "libutempter" "libxss" "nss" "python-psutil" "xorg-server-xvfb" "xorg-setxkbmap" "xorg-xauth" "xorg-xdpyinfo" "xorg-xrandr")
 install="${pkgname}.install"
 source=(
-  "${pkgname}-${pkgver}.deb::https://dl.google.com/linux/${pkgname}/deb/pool/main/${pkgname:0:1}/${pkgname}/${pkgname}_${pkgver}_amd64.deb"
+  "${pkgname}-${pkgver}.deb::https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb"
   "${pkgname}.service"
   "pamrule"
   "crd"
-)
-sha256sums=(
-  "a49ac21281a220c17afcfdcdf4a274d1e094927aea135f53ee7eb39a2c1b07a4"
-  "e5da5ae89b5bc599f72f415d1523341b25357931b0de46159fce50ab83615a4b"
-  "fcc38269eb1cc902abff9688eda9377a22367e39b9f111f87c0dd8e77adb82e2"
-  "021110f49d465294517eec92eeb24ebca41e264ef33cbdda78732add1f269d02"
 )
 
 # curl -qs https://dl.google.com/linux/chrome-remote-desktop/deb/dists/stable/main/binary-amd64/Packages | grep "^Version\|^SHA256" | awk '{print $2}'
